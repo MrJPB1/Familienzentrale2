@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  familienzentrale:
+    build: .
+    container_name: familienzentrale
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./data:/app/data
