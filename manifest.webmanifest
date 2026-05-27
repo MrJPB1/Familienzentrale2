@@ -1,0 +1,9 @@
+{
+  "name": "Familien-Kommandozentrale V4",
+  "short_name": "Familie",
+  "start_url": "./index.html",
+  "display": "fullscreen",
+  "background_color": "#fbfbfd",
+  "theme_color": "#f7d36c",
+  "icons": []
+}
