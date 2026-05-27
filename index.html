@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Familien-Kommandozentrale</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="device-frame">
+    <aside class="sidebar">
+      <div class="brand">✿</div>
+      <button class="nav active" onclick="openModule('calendar')" title="Kalender">📅<span>Kalender</span></button>
+      <button class="nav" onclick="openModule('school')" title="Schule">🎓<span>Schule</span></button>
+      <button class="nav" onclick="openModule('chores')" title="Chores">🎯<span>Chores</span></button>
+      <button class="nav" onclick="openModule('points')" title="Punkte">⭐<span>Punkte</span></button>
+      <button class="nav" onclick="openModule('meals')" title="Essen">🍎<span>Essen</span></button>
+      <button class="nav" onclick="openModule('shopping')" title="Listen">🧾<span>Listen</span></button>
+      <button class="nav" onclick="openModule('accounts')" title="Accounts">👤<span>Profile</span></button>
+      <button class="nav" onclick="openModule('parents')" title="Elternmenü">🔐<span>Eltern</span></button>
+      <button class="nav muted" onclick="renderDashboard()" title="Zurück">↻</button>
+      <button class="add-btn" onclick="openModule('quickAdd')">＋</button>
+    </aside>
+
+    <section class="screen">
+      <header class="app-header">
+        <div>
+          <h1><span id="clock">--:--</span> | <span id="familyTitle">Familie Becker</span></h1>
+          <div class="range-tabs">
+            <button>Heute</button>
+            <button class="active">15.07. - 19.07.</button>
+            <button>20.07. - 25.07.</button>
+          </div>
+        </div>
+        <div class="family-row" id="familyAvatars"></div>
+      </header>
+
+      <main id="content"></main>
+    </section>
+  </div>
+
+  <dialog id="moduleDialog">
+    <div class="dialog-head">
+      <h2 id="dialogTitle">Modul</h2>
+      <button class="close-btn" onclick="closeModule()">×</button>
+    </div>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <section id="frameMode" class="frame-mode hidden" onclick="stopFrameMode()">
+    <div class="frame-card">
+      <div id="frameEmoji">🌈</div>
+      <h2 id="frameText">Familienzeit</h2>
+      <p>Zum Beenden irgendwo tippen</p>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
